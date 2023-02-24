@@ -7,6 +7,7 @@ rm temp-ports.txt
 
 #Exporting ports environment variable to the list of ports on rhost
 export ports=$(cat ports.txt)
+rm ports.txt
 
 #Final aggressive scan on all discovered ports, output to results.txt file
 nmap -p $ports -A $rhost -oN results.txt
